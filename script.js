@@ -97,9 +97,7 @@ var upperCasedCharacters = [
 
 // Step 4. Display Password
 
-let userInput = prompt(
-  "How many characters would you like? Please pick a number between 8 and 128.",
-);
+let userInput = prompt( "How many characters would you like? Please pick a number between 8 and 128."); 
 
 if (userInput >= 8 && userInput <= 128) {
   return userInput;
@@ -114,7 +112,7 @@ var ifLowerCase = confirm("Do you owant to add lower Case characters?")
 // Function to prompt user for password options
 function getPasswordOptions() 
   
-
+"hey did you click?"
 
 getPasswordOptions()
 // Function for getting a random element from an array
