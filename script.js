@@ -101,27 +101,49 @@ function getPasswordOptions() {
 
     numberOfCharacters = prompt("Please enter a valid number.");
   }
+
   else {
 
     alert("Your password will be " + numberOfCharacters + " characters long.");
-    
+
   }
 
-  lowerCasedCharacters = confirm ("Do you want lower case characters?")
+  hasSpecial = confirm ("Do you want special case?")
 
-  upperCasedCharacters = confirm ("Do you want upper case characters?")
+  hasNumeric = confirm ("Do you want numbers?")
 
-  specialCharacters = confirm ("Do you want special case characters?")
- 
+  hasLowerCase = confirm ("Do you want lower case?")
+
+  hasUpperCase = confirm ("Do you want upper case?")
 
 
-}
+
+  if  (hasSpecial) {
+    hasSpecial = possibleCharacters.concate(specialCharacters)
+  }
+
+  if  (hasNumeric) {
+    hasNumeric = possibleCharacters.concate(numericCharacters)
+  }
+
+  if  (hasLowerCase) {
+      hasLowerCase = possibleCharacters.concate(lowerCasedCharacters)
+  }
+
+  if  (hasUpperCase) {
+      hasUpperCase = possibleCharacters.concate(upperCasedCharacters)
+  }
+
+};
+
 
 
 
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+
+
 
 }
 
@@ -131,7 +153,7 @@ function generatePassword() {
   getPasswordOptions()
 
 
-  return"(your passwrod will go here)"
+  return finalPassword;
 
 
 }
