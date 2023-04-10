@@ -91,33 +91,7 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  var numberOfCharacters = prompt("Please select a password length between 8-128.");
-
-  if (numberOfCharacters < 8 || numberOfCharacters > 128) {
-
-    return "Please choose a valid number of characters.";
-
-  } else if (isNaN(numberOfCharacters)) {
-
-    numberOfCharacters = prompt("Please enter a valid number.");
-  }
-
-  else {
-
-    alert("Your password will be " + numberOfCharacters + " characters long.");
-
-  }
-
-  hasSpecial = confirm ("Do you want special case?")
-
-  hasNumeric = confirm ("Do you want numbers?")
-
-  hasLowerCase = confirm ("Do you want lower case?")
-
-  hasUpperCase = confirm ("Do you want upper case?")
-
-
-
+  
   if  (hasSpecial) {
     hasSpecial = possibleCharacters.concate(specialCharacters)
   }
@@ -143,17 +117,40 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
+  // Generate a random index between 0 and the length of the array
+  const index = Math.floor(Math.random() * arr.length);
 
-
+  // Return the random element from the array
+  return arr[index];
+  
 }
 
 // Function to generate password with user input
 function generatePassword() {
 
-  getPasswordOptions()
+  var numberOfCharacters = prompt("Please select a password length between 8-128.");
 
+  if (numberOfCharacters < 8 || numberOfCharacters > 128) {
 
-  return finalPassword;
+    return "Please choose a valid number of characters.";
+
+  } else if (isNaN(numberOfCharacters)) {
+
+    numberOfCharacters = prompt("Please enter a valid number.");
+  }
+
+  else {
+
+    alert("Your password will be " + numberOfCharacters + " characters long.");
+  }
+
+  hasSpecial = confirm ("Do you want special case?")
+
+  hasNumeric = confirm ("Do you want numbers?")
+
+  hasLowerCase = confirm ("Do you want lower case?")
+
+  hasUpperCase = confirm ("Do you want upper case?")
 
 
 }
