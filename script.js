@@ -111,7 +111,7 @@ function getPasswordOptions() {
 
   upperCasedCharacters = confirm ("Do you want upper case characters?")
 
-  specialCasedCharacters = confirm ("Do you want special case characters?")
+  specialCharacters = confirm ("Do you want special case characters?")
  
 
 
