@@ -88,33 +88,38 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Step 1. Prompt for user Password chriteria
-            // a. Prompt password length 8 - 128
-            // b. Prompt (confirm) the user if they need special/Upper/Lower character 
+// Function to prompt user for password options
+function getPasswordOptions() {
 
-// Step 2. Validate the input length from (8-128)
-// Step 3. Generate Password based on criteria
+  var numberOfCharacters = prompt("Please select a password length between 8-128.");
 
-// Step 4. Display Password
+  if (numberOfCharacters < 8 || numberOfCharacters > 128) {
 
-let userInput = prompt( "How many characters would you like? Please pick a number between 8 and 128."); 
+    return "Please choose a valid number of characters.";
 
-if (userInput >= 8 && userInput <= 128) {
-  return userInput;
-} else {
-  alert("Invalid Input. We will give you a default password of length 8 - 128.");
+  } else if (isNaN(numberOfCharacters)) {
+
+    numberOfCharacters = prompt("Please enter a valid number.");
+  }
+  else {
+
+    alert("Your password will be " + numberOfCharacters + " characters long.");
+    
+  }
+
+  lowerCasedCharacters = confirm ("Do you want lower case characters?")
+
+  upperCasedCharacters = confirm ("Do you want upper case characters?")
+
+  specialCasedCharacters = confirm ("Do you want special case characters?")
+ 
+
+
 }
 
-var ifLowerCase = confirm("Do you owant to add lower Case characters?")
 
 
 
-// Function to prompt user for password options
-function getPasswordOptions() 
-  
-"hey did you click?"
-
-getPasswordOptions()
 // Function for getting a random element from an array
 function getRandom(arr) {
 
@@ -122,6 +127,12 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+
+  getPasswordOptions()
+
+
+  return"(your passwrod will go here)"
+
 
 }
 
