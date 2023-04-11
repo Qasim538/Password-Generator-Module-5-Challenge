@@ -123,33 +123,40 @@ function getPasswordOptions() {
 
 
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-
-  // // Generate a random index between 0 and the length of the array
-  // const index = Math.floor(Math.random() * arr.length);
-
-  // // Return the random element from the array
-  // return arr[index];
-  
-}
+// // Function for getting a random element from an array
+// function getRandom(arr) {
+// }
 
 // Function to generate password with user input
+
 function generatePassword() {
+  var password = "";
+  for (var i = 0; i < charactersLength; i++){
+    var randomLetter = Math.floor(Math.random() * choiceArr.length)
+    password = password + choiceArr[randomLetter];
+  }
 
-
-
+  return password;
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
+
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  // This function will return true of false
+  
+  var correctOption = getPasswordOptions(); 
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  if(correctOption) {
+  var newPassword = generatePassword();
+  passwordText.value = newPassword;
+} else {
+  passwordText.value = "";
+}
+
 }
 
 // Add event listener to generate button
