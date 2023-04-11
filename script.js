@@ -1,3 +1,6 @@
+var charactersLength = 8;
+var choiceArr = [];
+
 // Array of special characters to be included in password
 var specialCharacters = [
   '@',
@@ -90,23 +93,29 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  choiceArr = [];
 
+  charactersLength = parseInt(prompt("Please enter number of character you want in your password from, min 8, max 128 characters"))
+  if(isNaN(charactersLength) || charactersLength < 8 || charactersLength > 128) {
+    alert("Password must be between 8-128 numbers long")
+    return false;
+  }
+
+  if (confirm("Do you want Lowercase letters?")) {
+    choiceArr = choiceArr.concat(lowerCasedCharacters)
+  }
+  if (confirm("Do you want Uppercase letters?")) {
+    choiceArr = choiceArr.concat(upperCasedCharacters)
+  }
+  if (confirm("Do you want Special letters?")) {
+    choiceArr = choiceArr.concat(specialCharacters)
+  }
+  if (confirm("Do you want Numbers?")) {
+    choiceArr = choiceArr.concat(numericCharacters)
+  }
+
+  return true;
   
-  if  (hasSpecial) {
-    hasSpecial = possibleCharacters.concate(specialCharacters)
-  }
-
-  if  (hasNumeric) {
-    hasNumeric = possibleCharacters.concate(numericCharacters)
-  }
-
-  if  (hasLowerCase) {
-      hasLowerCase = possibleCharacters.concate(lowerCasedCharacters)
-  }
-
-  if  (hasUpperCase) {
-      hasUpperCase = possibleCharacters.concate(upperCasedCharacters)
-  }
 
 };
 
@@ -117,40 +126,17 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  // Generate a random index between 0 and the length of the array
-  const index = Math.floor(Math.random() * arr.length);
+  // // Generate a random index between 0 and the length of the array
+  // const index = Math.floor(Math.random() * arr.length);
 
-  // Return the random element from the array
-  return arr[index];
+  // // Return the random element from the array
+  // return arr[index];
   
 }
 
 // Function to generate password with user input
 function generatePassword() {
 
-  var numberOfCharacters = prompt("Please select a password length between 8-128.");
-
-  if (numberOfCharacters < 8 || numberOfCharacters > 128) {
-
-    return "Please choose a valid number of characters.";
-
-  } else if (isNaN(numberOfCharacters)) {
-
-    numberOfCharacters = prompt("Please enter a valid number.");
-  }
-
-  else {
-
-    alert("Your password will be " + numberOfCharacters + " characters long.");
-  }
-
-  hasSpecial = confirm ("Do you want special case?")
-
-  hasNumeric = confirm ("Do you want numbers?")
-
-  hasLowerCase = confirm ("Do you want lower case?")
-
-  hasUpperCase = confirm ("Do you want upper case?")
 
 
 }
