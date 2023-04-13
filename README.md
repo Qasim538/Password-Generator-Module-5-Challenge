@@ -34,6 +34,12 @@ I have added a MIT license. This is free website and anyone can use it.
 Here is the link to repository:
 https://github.com/Qasim538/Password-Generator-Module-5-Challenge
 
+https://qasim538.github.io/Password-Generator-Module-5-Challenge/
+
+## Links to my Github
+https://github.com/Qasim538
+
+
 ## Screenshot for reference only
 
 ![Alt text](/Assets/Images/screenshot.png"Screenshot Password Generator")
