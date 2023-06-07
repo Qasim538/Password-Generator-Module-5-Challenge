@@ -42,4 +42,4 @@ https://github.com/Qasim538
 
 ## Screenshot for reference only
 
-![Alt text](/assets/Images/screenshot.png"Screenshot Password Generator")
+![Alt text](/Assets/Images/screenshot.png)
